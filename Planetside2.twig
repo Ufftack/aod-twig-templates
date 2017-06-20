@@ -1,8 +1,8 @@
 [table="width: 800, align: center"][tr][td]
 [center]
 
-{# battlefield header #}
-[img]http://i.imgur.com/Xb2X4je.png[/img]
+{# planetside header #}
+[img]http://i.imgur.com/BKkTYMC.jpg[/img]
 
 [size=5][color=#00FF00][b][i][u]Division Leadership[/u][/i][/b][/color][/size]
 
@@ -33,7 +33,7 @@
 		[td="width:33%"]
 	{% endif %}
 	
-	[color=red][size=5]{{ division.locality.platoon }} #{{ loop.index }}[/size][/color]
+	[color=red][size=5]{{ division.locality.platoon }} #{{ loop.index }inst}[/size][/color]
 	[size=3][i]{{ platoon.name }}[/i]
 	
 	[color=cyan]{{ division.locality.platoonLeader }}[/color]
@@ -67,13 +67,8 @@
 		{# iterate squad members #}
 		[size=1][list=1]
 		{%- for member in squad.members -%}
-			[*][profile={{ member.clan_id }}]{{ member.present().rankName }}[/profile] -
-			{%- if member.handle -%}
-				[url={{ member.handle.fullUrl }}][BC][/url]
-			{% else %}
-				XXX
-			{% endif %}
-		{% endfor %}
+			[*][profile={{ member.clan_id }}]{{ member.present().rankName }}[/profile] 
+        {% endfor %}
 		[/list][/size]
 	{% endfor %}
 	[/td]
